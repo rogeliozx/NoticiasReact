@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './../news.jpg';
-;
+import PropTypes from 'prop-types';
 const Noticia = ({noticia}) =>{
 
     const {urlToImage,url,title,description,source}=noticia;
@@ -12,8 +12,8 @@ const Noticia = ({noticia}) =>{
             <div className='card-image'>
               
                 <img src={imagen} alt={title}
-                width={200}
-                height={150}/>
+                width={150}
+                height={200}/>
                 <span className='card-title'>{source.name}</span>
             </div>
             <div className='card-content'>
@@ -32,6 +32,8 @@ const Noticia = ({noticia}) =>{
     );
 }
 //extrar datos
-
+Noticia.protoType={
+    noticia:PropTypes.object.isRequired
+}
  
 export default Noticia;
